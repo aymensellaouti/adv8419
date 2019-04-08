@@ -1,3 +1,7 @@
-<p>
-  first works!
+<p #monParagraphe [hidden]="show">
+  first component
 </p>
+
+<button class="btn btn-primary" (click)="showHide(monParagraphe)">
+  show
+</button>

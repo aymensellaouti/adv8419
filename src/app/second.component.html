@@ -1,0 +1,15 @@
+<div [style.backgroundColor]="maCouleur">
+  Bonjour
+</div>
+
+<input
+  type="textn"
+  class="form-control"
+  [(ngModel)]="maCouleur"
+>
+
+la couleur est : {{maCouleur}}
+
+<button (click)="setDefaultColor()" class="btn btn-danger">
+  reset
+</button>

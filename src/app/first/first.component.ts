@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first.component.css']
 })
 export class FirstComponent implements OnInit {
-
+  show = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showHide(paragraphe) {
+    console.log(paragraphe);
+    this.show = ! this.show;
   }
 
 }
