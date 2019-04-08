@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {count} from 'rxjs/operators';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-second',
@@ -7,10 +6,10 @@ import {count} from 'rxjs/operators';
   styleUrls: ['./second.component.css']
 })
 export class SecondComponent implements OnInit {
-  defaultColor = 'red';
+  @Input() defaultColor = 'red';
   maCouleur = this.defaultColor;
+  @Output() sonColor = new EventEmitter();
   constructor() { }
-
   ngOnInit() {
 
   }
@@ -19,5 +18,10 @@ export class SecondComponent implements OnInit {
   }
   setDefaultColor() {
     this.maCouleur = this.defaultColor;
+  }
+  sendDataToDad() {
+    this.sonColor.emit(
+      this.maCouleur
+    );
   }
 }
