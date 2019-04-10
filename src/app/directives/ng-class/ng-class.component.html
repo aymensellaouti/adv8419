@@ -1,0 +1,12 @@
+<p [ngClass]="{barca: isBarca, roma: isRoma, juve: isJuve}">
+  ng-class works!
+</p>
+
+<select #selectClass (change)="changeStyle(selectClass.value)">
+  <option value="roma">Roma</option>
+  <option value="juve">Juve</option>
+  <option value="barca">Barca</option>
+</select>
+
+<p appHighlight> Test directive</p>
+<input type="text" class="form-control" appRainbow>
