@@ -26,4 +26,7 @@ export class TodoService {
       alert('Todo innexistant');
     }
   }
+  loggerTodo() {
+    console.log(this.todos);
+  }
 }

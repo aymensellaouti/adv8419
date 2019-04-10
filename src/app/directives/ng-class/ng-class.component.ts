@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import {TodoService} from '../../todo.service';
 
 @Component({
   selector: 'app-ng-class',
   templateUrl: './ng-class.component.html',
-  styleUrls: ['./ng-class.component.css']
+  styleUrls: ['./ng-class.component.css'],
+  providers: [TodoService]
 })
 export class NgClassComponent implements OnInit {
 
   isJuve = false;
   isRoma = true;
   isBarca = false;
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
+  }
+  loggerTodo() {
+    this.todoService.loggerTodo();
   }
   changeStyle(myClass) {
     if (myClass === 'juve') {

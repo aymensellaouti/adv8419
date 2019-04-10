@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Personne} from '../../Model/personne.model';
+import {CvService} from '../cv.service';
 
 @Component({
   selector: 'app-item',
@@ -10,7 +11,9 @@ export class ItemComponent implements OnInit {
 
   @Input() personne: Personne;
   @Output() sendPersonne = new EventEmitter();
-  constructor() { }
+  constructor(
+    private cvService: CvService
+  ) { }
 
   ngOnInit() {
   }
@@ -19,6 +22,9 @@ export class ItemComponent implements OnInit {
     this.sendPersonne.emit(
       this.personne
     );
+  }
+  deletePersonne() {
+    this.cvService.deleteCv(this.personne);
   }
 
 }
