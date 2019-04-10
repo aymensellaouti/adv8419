@@ -7,7 +7,7 @@ import {Personne} from '../../Model/personne.model';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  @Input() personne: Personne;
+  @Input() personne: Personne = null;
   constructor() { }
 
   ngOnInit() {

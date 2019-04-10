@@ -12,8 +12,9 @@ export class ListComponent implements OnInit {
   @Output() sendPersonne = new EventEmitter();
   ngOnInit() {
     this.personnes = [
-       new Personne(1, 'aymen', 'sellaouti', 36, 'zizou.jpeg', 'teacher', 777),
-       new Personne(2, 'zidan', 'Zizou', 30, 'zizou.jpeg', 'player', 888)
+       new Personne(1, 'sellaouti', 'aymen', 36, 'as.jpg', 'teacher', 777),
+       new Personne(2, 'zidan', 'Zizou', 30, 'zizou.jpeg', 'player', 888),
+       new Personne(3, 'sellaouti', 'skander', 0, '', 'bébé', 71118),
     ];
   }
   triggerEvent(personne) {

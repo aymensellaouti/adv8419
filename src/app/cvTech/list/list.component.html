@@ -1,4 +1,13 @@
 <ol class="list-group">
-  <app-item (sendPersonne)="triggerEvent($event)" [personne]="personnes[0]"></app-item>
-  <app-item (sendPersonne)="triggerEvent($event)" [personne]="personnes[1]"></app-item>
+  <div
+    *ngIf="!personnes.length"
+    class="alert alert-danger">
+    Aucune personne dans la base des CVs
+  </div>
+  <app-item
+    *ngFor="let personne of personnes"
+    (sendPersonne)="triggerEvent($event)"
+    [personne]="personne"
+  >
+  </app-item>
 </ol>
