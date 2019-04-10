@@ -19,6 +19,7 @@ import { RainbowDirective } from './rainbow.directive';
 import { DefaultImagePipe } from './cvTech/default-image.pipe';
 import { TodoComponent } from './todo/todo.component';
 import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
     RainbowDirective,
     DefaultImagePipe,
     TodoComponent,
-    EmbaucheComponent
+    EmbaucheComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
