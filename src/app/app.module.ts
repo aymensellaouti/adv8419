@@ -23,6 +23,9 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailCvComponent } from './cvTech/detail-cv/detail-cv.component';
 import { Nf404Component } from './nf404/nf404.component';
+import { ObservableComponent } from './observable/observable.component';
+import { HttpComponent } from './http/http.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,12 +47,15 @@ import { Nf404Component } from './nf404/nf404.component';
     LoginComponent,
     HeaderComponent,
     DetailCvComponent,
-    Nf404Component
+    Nf404Component,
+    ObservableComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

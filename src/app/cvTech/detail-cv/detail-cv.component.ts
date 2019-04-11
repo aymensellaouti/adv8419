@@ -27,5 +27,10 @@ export class DetailCvComponent implements OnInit {
       }
     );
   }
+  deletePersonne() {
+    this.cvService.deleteCv(this.personne);
+    const link = [''];
+    this.router.navigate(link);
+  }
 
 }
