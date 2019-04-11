@@ -22,6 +22,7 @@ import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailCvComponent } from './cvTech/detail-cv/detail-cv.component';
+import { Nf404Component } from './nf404/nf404.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DetailCvComponent } from './cvTech/detail-cv/detail-cv.component';
     EmbaucheComponent,
     LoginComponent,
     HeaderComponent,
-    DetailCvComponent
+    DetailCvComponent,
+    Nf404Component
   ],
   imports: [
     BrowserModule,
