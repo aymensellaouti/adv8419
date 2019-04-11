@@ -21,4 +21,11 @@ export class CvService {
     const index = this.personnes.indexOf(personne);
     this.personnes.splice(index, 1);
   }
+  findPersonneById(id): Personne {
+    const personne = this.personnes.find(personne => personne.id == id);
+    if (!personne) {
+      return null;
+    }
+    return personne;
+  }
 }

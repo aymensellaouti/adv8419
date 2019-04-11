@@ -20,6 +20,8 @@ import { DefaultImagePipe } from './cvTech/default-image.pipe';
 import { TodoComponent } from './todo/todo.component';
 import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
 import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { DetailCvComponent } from './cvTech/detail-cv/detail-cv.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { LoginComponent } from './login/login.component';
     DefaultImagePipe,
     TodoComponent,
     EmbaucheComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    DetailCvComponent
   ],
   imports: [
     BrowserModule,

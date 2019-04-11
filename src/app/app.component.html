@@ -1,7 +1,9 @@
-<!--<app-second (sonColor)="treatSonData($event)" [defaultColor]="'blue'"></app-second>-->
-<!--<app-second (sonColor)="treatSonData($event)" [defaultColor]="'green'"></app-second>-->
-<!--<app-todo></app-todo>-->
-<!--<app-cv></app-cv>-->
-<!--<app-ng-style [color]="'white'" [bgc]="'red'"></app-ng-style>-->
-<!--<app-ng-class></app-ng-class>-->
-<app-login></app-login>
+<app-header></app-header>
+<div class="row">
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="col-md-3">
+    Pub
+  </div>
+</div>
