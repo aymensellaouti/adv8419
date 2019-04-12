@@ -32,9 +32,15 @@ export class DetailCvComponent implements OnInit {
     );
   }
   deletePersonne() {
-    this.cvService.deleteCv(this.personne);
-    const link = [''];
-    this.router.navigate(link);
+    this.cvService.deleteCv(this.personne.id).subscribe(
+      (response) => {
+        const link = [''];
+        this.router.navigate(link);
+      },
+      (erreur) => {
+        console.log(erreur);
+      }
+    );
   }
 
 }

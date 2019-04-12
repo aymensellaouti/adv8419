@@ -24,24 +24,14 @@ export class CvService {
   getPersonnes(): Observable<Personne[]> {
     return this.http.get<Personne[]>(this.apiLink);
   }
-  deleteCv(personne: Personne) {
-    const index = this.personnes.indexOf(personne);
-    this.personnes.splice(index, 1);
+  deleteCv(id) {
+    return this.http.delete(this.apiLink + `/${id}`);
   }
   findPersonneById(id): Observable<Personne> {
     return this.http.get<Personne>(this.apiLink + `/${id}`);
   }
   addPersonne(personne: Personne) {
-    const token = localStorage.getItem('token');
-    if (token) {
-//      const headers = new HttpHeaders().set('Authorization', token);
-      //{"where":{"name":{"like":"%${name}%"}}}
-      const params = new HttpParams().set('access_token', token);
-      return this.http.post(this.apiLink, personne, {
-        params
-      });
-    }
-    return this.http.post(this.apiLink, personne);
+     return this.http.post(this.apiLink, personne);
   }
   findPersonneLike(name): Observable<Personne[]> {
     const filter = `{"where":{"name":{"like":"%${name}%"}}}`;

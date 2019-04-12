@@ -28,6 +28,7 @@ import { HttpComponent } from './http/http.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AddPersonneComponent } from './cvTech/add-personne/add-personne.component';
 import { SearchComponent } from './cvTech/search/search.component';
+import {AuthentificationInterceptorProvider} from './intercepteurs/login.interceptor';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,9 @@ import { SearchComponent } from './cvTech/search/search.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthentificationInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
