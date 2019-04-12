@@ -21,4 +21,7 @@
          required
   >
 </form>
+<div class="alert alert-danger" *ngIf="cnxError">
+  Problème d'authentification
+</div>
 <button [disabled]="formulaire.invalid" (click)="login(formulaire)" class="btn btn-primary">Login</button>

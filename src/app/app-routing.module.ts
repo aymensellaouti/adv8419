@@ -5,11 +5,13 @@ import {TodoComponent} from './todo/todo.component';
 import {LoginComponent} from './login/login.component';
 import {DetailCvComponent} from './cvTech/detail-cv/detail-cv.component';
 import {Nf404Component} from './nf404/nf404.component';
+import {AddPersonneComponent} from './cvTech/add-personne/add-personne.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'cv', pathMatch: 'full'},
   {path: 'cv', children: [
       {path: '', component: CvComponent},
+      {path: 'add', component: AddPersonneComponent},
       {path: ':id', component: DetailCvComponent},
     ],
   },

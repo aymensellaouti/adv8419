@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Personne} from '../Model/personne.model';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +34,18 @@ export class CvService {
       return null;
     }
     return personne;
+  }
+  addPersonne(personne: Personne) {
+    const token = localStorage.getItem('token');
+    if (token) {
+//      const headers = new HttpHeaders().set('Authorization', token);
+      //{"where":{"name":{"like":"%${name}%"}}}
+      const params = new HttpParams().set('access_token', token);
+      return this.http.post(this.apiLink, personne, {
+        params
+      });
+    }
+
+    return this.http.post(this.apiLink, personne);
   }
 }

@@ -8,7 +8,7 @@ import {CvService} from '../cv.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  personnes: Personne[];
+  personnes: Personne[] = [];
   isFakeData = false;
   constructor(
     private cvService: CvService
