@@ -11,7 +11,7 @@ class LoginInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
     if (!token) {
-      next.handle(req);
+      return next.handle(req);
     } else {
       console.log('Je vais ajouter un header contenant le token');
       const cloneReq = req.clone(

@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     this.authentificationService.login(formulaire.value).subscribe(
       (reponse) => {
         localStorage.setItem('token', reponse['id']);
+        this.authentificationService.setIsLogged(true);
         this.cnxError = false;
         this.router.navigate(['']);
       },

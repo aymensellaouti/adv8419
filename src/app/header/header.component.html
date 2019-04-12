@@ -12,7 +12,7 @@
           CV
         </a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="authentificationService.getIsLogged()" class="nav-item">
         <a class="nav-link" [routerLink]="['cv/add']"
            routerLinkActive="active"
         >
@@ -22,8 +22,12 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['todo']" routerLinkActive="active" >TODO</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="!authentificationService.getIsLogged()" class="nav-item">
         <a class="nav-link" [routerLink]="['login']" routerLinkActive="active">Login</a>
+      </li>
+
+      <li *ngIf="authentificationService.getIsLogged()" class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>

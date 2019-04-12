@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {AuthentificationService} from '../authentification.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,10 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   showNav = false;
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authentificationService: AuthentificationService
+    ) { }
   ngOnInit() {
   }
   showNavbar() {
@@ -17,5 +21,9 @@ export class HeaderComponent implements OnInit {
   naviguer(maRoute) {
     const link = [maRoute];
     this.router.navigate(link);
+  }
+  logout() {
+    localStorage.removeItem('token');
+    this.authentificationService.setIsLogged(false);
   }
 }
