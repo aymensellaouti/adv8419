@@ -4,6 +4,11 @@
     class="alert alert-danger">
     Aucune personne dans la base des CVs
   </div>
+  <div
+    *ngIf="isFakeData"
+    class="alert alert-danger">
+    You are using fake data.
+  </div>
   <app-item
     *ngFor="let personne of personnes"
     (sendPersonne)="triggerEvent($event)"

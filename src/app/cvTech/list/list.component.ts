@@ -9,12 +9,21 @@ import {CvService} from '../cv.service';
 })
 export class ListComponent implements OnInit {
   personnes: Personne[];
+  isFakeData = false;
   constructor(
     private cvService: CvService
   ) { }
   @Output() sendPersonne = new EventEmitter();
   ngOnInit() {
-    this.personnes = this.cvService.getPersonnes();
+    this.cvService.getPersonnes().subscribe(
+      (personnes) => {
+        this.personnes = personnes;
+      },
+      (erreur) => {
+        this.personnes = this.cvService.getFakePersonnes();
+        this.isFakeData = true;
+      }
+    );
   }
   triggerEvent(personne) {
     console.log('in trigger list');
