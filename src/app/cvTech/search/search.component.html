@@ -1,0 +1,19 @@
+<input type="text"
+       class="form-control"
+       [(ngModel)]="searchField"
+       (keyup)="search()"
+>
+<div>
+<ol class="list-group">
+  <li *ngFor="let personne of result" class="list-group-item">
+    <img
+      (click)="navigateToDetail(personne.id)"
+      src="assets/images/{{personne?.path|defaultImage}}"
+      alt="{{personne.name}}"
+      width="50px"
+      height="50px"
+    >
+    {{personne.name}} {{personne.firstname}}
+  </li>
+</ol>
+</div>

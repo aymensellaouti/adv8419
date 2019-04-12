@@ -28,12 +28,8 @@ export class CvService {
     const index = this.personnes.indexOf(personne);
     this.personnes.splice(index, 1);
   }
-  findPersonneById(id): Personne {
-    const personne = this.personnes.find(personne => personne.id == id);
-    if (!personne) {
-      return null;
-    }
-    return personne;
+  findPersonneById(id): Observable<Personne> {
+    return this.http.get<Personne>(this.apiLink + `/${id}`);
   }
   addPersonne(personne: Personne) {
     const token = localStorage.getItem('token');
@@ -45,7 +41,11 @@ export class CvService {
         params
       });
     }
-
     return this.http.post(this.apiLink, personne);
+  }
+  findPersonneLike(name): Observable<Personne[]> {
+    const filter = `{"where":{"name":{"like":"%${name}%"}}}`;
+    const params = new HttpParams().set('filter', filter);
+    return this.http.get<Personne[]>(this.apiLink, {params});
   }
 }

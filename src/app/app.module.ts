@@ -27,6 +27,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { HttpComponent } from './http/http.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AddPersonneComponent } from './cvTech/add-personne/add-personne.component';
+import { SearchComponent } from './cvTech/search/search.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AddPersonneComponent } from './cvTech/add-personne/add-personne.compone
     Nf404Component,
     ObservableComponent,
     HttpComponent,
-    AddPersonneComponent
+    AddPersonneComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
